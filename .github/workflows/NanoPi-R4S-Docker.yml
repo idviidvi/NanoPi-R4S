@@ -1,12 +1,13 @@
 name: NanoPi-R4S-Docker
 
 on:
-  repository_dispatch:
-  workflow_dispatch:
-  #schedule:
-    #- cron: 0 17 * * *
-  # watch:
-  #   types: started
+  schedule:
+    - cron: 0 20 * * *
+  push:
+    branches:
+      - master
+  release:
+    types: [published]
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
